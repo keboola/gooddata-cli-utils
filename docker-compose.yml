@@ -1,0 +1,19 @@
+version: '2'
+services:
+  app:
+    build: .
+    image: keboola/gooddata-cli-utils
+    tty: true
+    stdin_open: true
+    command: php cli.php
+
+  dev:
+    image: keboola/gooddata-cli-utils
+    volumes:
+      - ./:/code
+    working_dir: /code
+    command: >
+       sh -c '
+       composer install
+       && php cli.php
+       '

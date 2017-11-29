@@ -1,0 +1,22 @@
+{
+  "name": "keboola/gooddata-cli-utils",
+  "require": {
+    "symfony/console": "^3.3",
+    "keboola/gooddata-php-client": "~2.6.3"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*"
+  },
+  "authors": [
+    {
+      "name": "Jakub Matejka",
+      "email": "jakub@keboola.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-0": {
+      "Keboola\\Console": "src/"
+    }
+  }
+}
