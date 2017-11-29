@@ -2,7 +2,8 @@
   "name": "keboola/gooddata-cli-utils",
   "require": {
     "symfony/console": "^3.3",
-    "keboola/gooddata-php-client": "~2.6.3"
+    "keboola/gooddata-php-client": "~2.6.3",
+    "monolog/monolog": "^1.23"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "2.*"

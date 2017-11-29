@@ -1,8 +1,6 @@
-# CLI UTILS
+# GoodData CLI Utilities
 
 [![Build Status](https://travis-ci.org/keboola/gooddata-cli-utils.svg?branch=master)](https://travis-ci.org/keboola/gooddata-cli-utils)
-
-GoodData CLI utils
 
 ### Running in Docker
 
