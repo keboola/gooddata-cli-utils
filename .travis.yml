@@ -5,7 +5,7 @@ services:
 before_script:
   - docker -v
   - docker-compose -v
-  - docker-compose build --build-arg VERSION=$TRAVIS_COMMIT app
+  - docker-compose build --build-arg VERSION=$TRAVIS_TAG app
 script:
   - docker-compose run --rm app ./vendor/bin/phpcs --standard=psr2 --ignore=vendor -n .
 deploy:
