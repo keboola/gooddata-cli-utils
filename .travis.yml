@@ -5,9 +5,10 @@ services:
 before_script:
   - docker -v
   - docker-compose -v
-  - docker-compose build app
+  - docker-compose build --build-arg VERSION=$TRAVIS_COMMIT app
 script:
   - docker-compose run --rm app ./vendor/bin/phpcs --standard=psr2 --ignore=vendor -n .
+  - docker-compose run --rm app cat ./REVISION
 deploy:
   provider: script
   skip_cleanup: true

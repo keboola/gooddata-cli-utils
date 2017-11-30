@@ -8,7 +8,7 @@
 
 ## Optimize SLI Hash
 
-Beware that there can't be any data load during the optimization.
+Beware that there shouldn't be any data load during the optimization.
 
 **Command**
 
