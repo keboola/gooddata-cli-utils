@@ -8,6 +8,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 
 abstract class AbstractCommand extends Command
 {
@@ -21,10 +22,17 @@ abstract class AbstractCommand extends Command
         ;
     }
 
-    protected function initClient(InputInterface $input)
+    protected function initClient(InputInterface $input, OutputInterface $output)
     {
-        $cliName = 'keboola/gooddata-cli-utils';
-        $cliVersion = file_exists('./REVISION') ? file_get_contents('./REVISION') : 'v1';
+        $cliName = 'keboola-gooddata-cli-utils';
+        $cliVersion = '1.0.0';
+        if (file_exists('./REVISION')) {
+            $v = trim(file_get_contents('./REVISION'));
+            if ($v) {
+                $cliVersion = $v;
+            }
+        }
+        $output->writeln("Running $cliName $cliVersion");
 
         $client = new Client();
         $client->setLogger(new Logger('gooddata-cli-utils', [new StreamHandler('php://stdout')]));

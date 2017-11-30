@@ -16,7 +16,7 @@ class OptimizeSliHash extends AbstractCommand
     }
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $client = $this->initClient($input);
+        $client = $this->initClient($input, $output);
         $client->getDatasets()->optimizeSliHash($input->getArgument('pid'));
     }
 }

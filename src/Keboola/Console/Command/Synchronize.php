@@ -21,7 +21,7 @@ class Synchronize extends AbstractCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $client = $this->initClient($input);
+        $client = $this->initClient($input, $output);
         $client->getDatasets()->synchronize($input->getArgument('pid'), $input->getArgument('dataset'), !$input->getOption('hard'));
     }
 }
