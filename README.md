@@ -36,3 +36,6 @@ By default it runs "soft" synchronization with data preservation. If you want a 
 ```
 php cli.php synchronize-dataset USERNAME PASSWORD PID DATASET 
 ```
+## License
+
+MIT licensed, see [LICENSE](./LICENSE) file.
